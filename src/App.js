@@ -33,10 +33,10 @@ function App() {
             <p>{data.name}</p>
           </div>
           <div className="temp">
-            {data.main ? <h1>{data.temp}</h1> : null}
-            <h1>{data.temp}°F</h1>
+            {data.main ? <h1>{data.main.temp}°F</h1> : null}
           </div>
           <div className="description">
+            {data.weather ? <p>{data.weather[0].main}</p> : null}
             <p>Clouds</p>
           </div>
           <div className="bottom">
