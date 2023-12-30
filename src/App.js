@@ -1,5 +1,14 @@
 import React, { useState } from 'react'
 import axios from "axios";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+
+const linkedinLink = () => {
+  window.location.href = "https://www.linkedin.com/in/ryankrohne/"
+};
+const gitHubLink = () => {
+  window.location.href = "https://github.com/Ryan-Krohne"
+};
 
 function App() {
   const [data, setData] = useState({})
@@ -19,12 +28,31 @@ function App() {
 
   return (
     <div className="app">
+
+      <div icons>
+        <FaLinkedinIn onClick={linkedinLink}
+          size={40}
+          style={{
+            position: 'relative', /* Set a relative position */
+            top: '13px',         /* Move 10 pixels down from its original position */
+            left: '1380px',        /* Move 20 pixels to the right */
+          }} />
+
+        <FaGithub onClick={gitHubLink}
+          size={40}
+          style={{
+            position: 'relative', /* Set a relative position */
+            top: '10px',         /* Move 10 pixels down from its original position */
+            left: '1290px',        /* Move 20 pixels to the right */
+          }} />
+      </div>
+
       <div className="search">
         <input
           value={location}
           onChange={event => setLocation(event.target.value)}
           onKeyPress={searchLocation}
-          placeholder='Enter Location'
+          placeholder='Enter a Location'
           type="text" />
       </div>
       <div className="container">
